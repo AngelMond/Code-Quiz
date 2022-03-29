@@ -5,12 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
 <body>
+    <!--Header-->
+    <header>
+        <h1>Code Quiz</h1>
+        
+    </header>
+
+    <!--Main container-->
+    <main id="mainContainer">
+
+        <!--Before Start Quiz. Instructions and button-->
+        <div id="instructions-button-container">
+
+            <article id="instructions">
+                <p>Try to answer the following code related-questions within the time limit.
+                    Keep in mind that incorrect answers will penalize your scoretime by ten seconds!
+                </p>
+            </article>
+
+            <!--Button to start quiz-->
+            <button id="button">Start Quiz!</button>
+
+        </div>
+
+        <!--Question and Answers-->
+        <div id="question-answer-container">
+
+            <article id="question">
+                <h3>Aqui van mis preguntas</h3>
+            </article>
     
+            <article id="answersContainer">
+                
+                    <ol id="answers">
+                        <li>1. Opciones</li>
+                        <li>2. Opciones</li>
+                        <li>3. Opciones</li>
+                        <li>4. Opciones</li>
+                    </ol>
+               
+            </article>
+
+            <article id="timerContainer">
+                <div id="timer">Time:</div>
+            </article>
+        </div>
+
+        <!--High Scores-->
+        <div id="high-scores-container">
+            <article>
+                <p>High Scores</p>
+            </article>
+        </div>
+            
+
+    </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
