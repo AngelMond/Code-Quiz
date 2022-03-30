@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -13,38 +13,42 @@
 <body>
     <!--Header-->
     <header>
-        <h1>Code Quiz</h1>
+        <h1 class="col-9 col-sm-7 lg-5">Code Quiz</h1>
         
     </header>
 
     <!--Main container-->
-    <main id="mainContainer">
+    <main id="mainContainer" >
 
         <!--Before Start Quiz. Instructions and button-->
-        <div id="instructions-button-container">
+        <div id="instructions-button-container" class="col-12 col-md-12">
 
-            <article id="instructions">
+            <article id="instructions" class="col-12 col-md-12">
                 <p>Try to answer the following code related-questions within the time limit.
                     Keep in mind that incorrect answers will penalize your scoretime by ten seconds!
                 </p>
             </article>
 
             <!--Button to start quiz-->
-            <button id="button">Start Quiz!</button>
+            <button class="col-7 col-md-5" id="button">Start Quiz!</button>
 
         </div>
 
-        <!--Question and Answers-->
-        <div id="question-answer-container">
 
+
+        <!--Question and Answers Container-->
+        <div id="question-answer-container" >
+
+            <!--This article will store the Questions -->
             <article id="question">
                 <h3>Aqui van mis preguntas</h3>
             </article>
-    
-            <article id="answersContainer">
+            
+            <!-- This article will store the answers-->
+            <article id="answersContainer" class="col-12 col-sm-8">
                 
                     <ol id="answers">
-                        <li>1. Opciones</li>
+                        <li class="col-12 col-sm-12">1. Opciones</li>
                         <li>2. Opciones</li>
                         <li>3. Opciones</li>
                         <li>4. Opciones</li>
@@ -52,20 +56,70 @@
                
             </article>
 
-            <article id="timerContainer">
-                <div id="timer">Time:</div>
+            <!--This is the timer-->
+            <article id="timeContainer">
+                <div id="timer" class="col-4 col-sm-2">Time: 0</div>
             </article>
+        </div>
+
+        <!--Once quiz is Done-->
+        <div id="quizDone">
+
+            <article>
+                <h3>You Finished!</h3>
+
+                <!--Shows your final score in the actual game-->
+                <div id="finalScore" class="col-10 col-sm-10 col-lg-7">
+                    <span >Your Final escore is: </span>
+                </div>
+
+                <!--Enter the player initials to save the score-->
+                <div id="enterScore">
+                    <label for="initials" class="col-10 col-sm-7 col-lg-4">Enter your initials:</label>
+                    <input type="text" class="col-10 col-sm-7 col-lg-4" >
+                </div>
+
+                <!--Submit button to upload the score-->
+                <div id="submitScore">
+                    <input type="submit" value="Submit" class="col-7 col-sm4 col-lg-6">
+                </div>
+
+            </article>
+
         </div>
 
         <!--High Scores-->
-        <div id="high-scores-container">
-            <article>
-                <p>High Scores</p>
+        <div id="highscores-main-container">
+
+            <!--Button to display the Scores Record-->
+            <article id="scoresButton" class="col-12 col-sm-12 col-lg-12 " style="border: 1px solid red;">
+                <span class="col-12 col-sm-12 col-lg-12" >High Scores</span>
             </article>
+
+            <div id="highscores-container">
+
+                <!--Stores the List of the player scores-->
+                <article id="scores">
+                    <h3>Highscores</h3>
+                    <div id="listAnswer" class="col-8 col-sm-7">
+                        <ol>
+                            <li>AB- 22</li>
+                        </ol>
+                    </div>
+                    
+                </article>
+                
+                <!--Buttons to return or clear the scores-->
+                <article id="highscore-buttons-container">
+                        <span id="goBack"  class="scoreButtons col-8 col-sm-3">Go Back</span>
+                        <span id="clearScores" class="scoreButtons col-8 col-sm-3">Clear Highscores</span>
+                </article>
+            </div>
+
         </div>
             
-
     </main>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
