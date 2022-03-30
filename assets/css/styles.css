@@ -1,11 +1,11 @@
+
+
+/*VARIABLES FOR COLORS*/
 :root{
     --background: #f5f5f5;
     --background-orange: #D97407;
     --background-answers:#581ac2;
 }
-
-
-
 
 body{
     background-color:var(--background);
@@ -113,7 +113,7 @@ main{
     justify-content: center; 
 
          /* Display NONE for questions and answer container*/
-                    display: ;
+                    display: none;
 }
 
 /*  QUESTION CONTAINER*/
@@ -177,7 +177,7 @@ main{
     border: 1px solid black;
     text-align: center;
                         /* DISPLAY NONDE QUIZ DONE*/
-                                display: ;
+                                display:none ;
 }
 
 /* HEADING YOU FINISHED*/
@@ -302,7 +302,7 @@ main{
     flex-flow: row wrap;
 
                 /* HIGHSCORES DISPLAY NONE*/
-                display:     ;
+                display: none    ;
 }
 
 /* CONTAINS THE OL LIST */
@@ -379,3 +379,27 @@ main{
 /*******************************************************************
 
 
+/* STYLES FOR FOOTER */
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    background-color: var(--background-orange);
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 0px -2px 7px gray;
+}
+
+footer p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: rgb(9, 9, 37);
+    font-weight: 700;
+}
+
+footer span:hover{
+    color: white;
+    text-decoration: underline;
+}
