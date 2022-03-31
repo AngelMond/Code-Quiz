@@ -9,10 +9,10 @@ var highscoresContainer = $('#highscores-container');
 var highscoreButtonScoreContainer = $('#scoresButton');
 
 //ol container to create <li> to save player score
-var olContainer = $('#listContainer');
+var initialsContainer = $('#initialsContainer');
 
 //Input to enter initials
-var enterInitials = $('#submitScore');
+var enterInitials = $('#inputInitials');
 
 //Variable to store my score
 var playerScore = $('#score');
@@ -40,7 +40,9 @@ var answers = $('#answers');
 
 
 //Function to display the highscores
-showHighscores.on('click', function(){
+showHighscores.on('click', function(event){
+    event.preventDefault();
+
     highscoresContainer.css('display', 'flex');
     instructionsContainer.css('display', 'none');
     highscoreButtonScoreContainer.css('display', 'none');
@@ -48,7 +50,9 @@ showHighscores.on('click', function(){
 });
 
 //Function to go back when the highscores screen is displayed
-goBack.on('click', function(){
+goBack.on('click', function(event){
+    event.preventDefault();
+
     instructionsContainer.css('display', 'flex');
     highscoresContainer.css('display', 'none');
     highscoreButtonScoreContainer.css('display', 'flex', );
@@ -212,18 +216,19 @@ function nextQuestion() {
 
 
 //Function to submit the score
-submitScore.on('click', function(){
+submitScore.on('click', function(event){
+    event.preventDefault();
     quizFinished.css('display', 'none');
     mainHighscoresContainer.css('display', 'flex');
     highscoreButtonScoreContainer.css('display', 'none');
     highscoresContainer.css('display', 'flex');
 
 
+    // Capture the text initials entered by the player
+    var initials = enterInitials.val();
 
-    enterInitials.text();
-
-    var createLi = $('<li>holalaas</li>');
-    olContainer.append(createLi);
+    //Create a <li> element with the initials of the player
+    initialsContainer.append('<li>'+ initials + ' - '+ score+'</li>');
     
 });
 
