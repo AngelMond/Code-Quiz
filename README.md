@@ -18,7 +18,7 @@
 * For select my html objects from JavaScript I used jQuery to keep my code a little bit more clean.
 
 * Initial view
-!["Initial View"](assets/screenshots/screenshot1)
+!["Initial View"](assets/screenshots/screenshot1.jpg)
 
 * View with the first question displayed
-!["View With the First Question"](assets/screenshots/screenshot1)
+!["View With the First Question"](assets/screenshots/screenshot2.jpg)
