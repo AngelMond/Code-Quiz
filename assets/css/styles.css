@@ -156,7 +156,6 @@ main{
 
 /* SCORE CONTAINER*/
 #scoreContainer{
-    border: 1px solid black;
     margin-top: 3rem;
     padding: 2px;
 }
