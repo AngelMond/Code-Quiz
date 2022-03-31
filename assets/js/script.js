@@ -7,6 +7,9 @@ var mainHighscoresContainer = $('#highscores-main-container');
 //This variable store the container for my highscores
 var highscores = $('#highscores-container');
 
+//Variable to store my score
+var playerScore = $('#score');
+
 //These variables stores buttons
 var startGame = $('#startButton');
 var showHighscores = $('#showScores');
@@ -148,7 +151,8 @@ function showQuestion(){
 function checkAnswer(answer){
     if(answer === arrayQuestions[currentQuestion].answer ){
 
-        score++
+        var actualScore = score+= 20
+        playerScore.text(actualScore);
         alert('correct answer');
     }else{
 
@@ -163,10 +167,13 @@ function nextQuestion() {
     currentQuestion++;
     if (currentQuestion === totalQuestions) {
         alert("Quiz Over");
+        
     } else {
         showQuestion();
     }
 }
+
+
 
 //function to change the question on click and check the answer
 function changeQuestion(event) {
