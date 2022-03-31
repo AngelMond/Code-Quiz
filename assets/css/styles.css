@@ -9,6 +9,7 @@
 
 body{
     background-color:var(--background);
+    
 }
 
 
@@ -151,6 +152,17 @@ main{
 #answersContainer ol li:hover{
     background-color: #6f3fc2 ;
     cursor: pointer;
+}
+
+/* SCORE CONTAINER*/
+#scoreContainer{
+    border: 1px solid black;
+    margin-top: 3rem;
+    padding: 2px;
+}
+
+#score{
+    font-weight: 600;
 }
 
 /* THIS IS MY CONTAINER FOR MY TIMER*/
@@ -388,7 +400,7 @@ footer{
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 250px;
+    margin-top: 337px;
     background-color: var(--background-orange);
     height: 80px;
     border-radius: 5px;
