@@ -186,11 +186,10 @@ main{
 
 /*************************************************************/
 /* THIRD DIV*/
-
+/* QUIZ FINISHED*/
 /* ONCE THE GAME IS OVER THIS WILL BE DISPLAY*/
 #quizDone{
     flex: 0 0 100%;
-    
     text-align: center;
     display: flex;
     justify-content: center;
@@ -240,12 +239,12 @@ main{
 
 
 /* CONTAINER FOR MY SUBMIT BUTTON*/
-#submitScore{
+#submitScoreContainer{
     padding: 10px 0px;
 }
 
 /* SUBMIT BUTTON TO UPLOAD THE SCORE*/
-#submitScore input[type="submit"]{
+#submitScoreContainer input[type="submit"]{
    background-color: var(--background-orange);
    /*width: 10% ;*/
    border: orange;
@@ -256,13 +255,13 @@ main{
 }
 
 /* STYLES FOR BUTTON WHEN IS HOVER*/
-#submitScore input[type="submit"]:hover{
+#submitScoreContainer input[type="submit"]:hover{
     color: white;
     cursor: pointer;
  }
 
  /* STYLES FOR BUTTON WHEN IS ACTIVE*/
- #submitScore input[type="submit"]:active{
+ #submitScoreContainer input[type="submit"]:active{
     box-shadow: 0px 0px 10px orange inset ;
  }
 
