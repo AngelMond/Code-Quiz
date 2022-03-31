@@ -9,10 +9,14 @@ var highscores = $('#highscores-container');
 
 //Variable to store my score
 var playerScore = $('#score');
+var finalScore = $('#finalScore');
 
 //These variables stores buttons
 var startGame = $('#startButton');
+var buttonScoreContainer = $('#scoresButton')
 var showHighscores = $('#showScores');
+var goBack = $('#goBack');
+var clearScores = $('#clearScores');
 
 //This variable store my timer
 var timer = $('#spanTimer');
@@ -31,6 +35,16 @@ var answers = $('#answers');
 //Function to display the highscores
 showHighscores.on('click', function(){
     highscores.css('display', 'flex');
+    instructionsContainer.css('display', 'none');
+    buttonScoreContainer.css('display', 'none');
+
+});
+
+//Function to go back when the highscores screen is displayed
+goBack.on('click', function (){
+    instructionsContainer.css('display', 'flex');
+    highscores.css('display', 'none');
+    buttonScoreContainer.css('display', 'flex', );
 });
 
 
@@ -154,6 +168,8 @@ function checkAnswer(answer){
         var actualScore = score+= 20
         playerScore.text(actualScore);
         alert('correct answer');
+
+        finalScore.text(actualScore);
     }else{
 
         timeLeft-=10;
@@ -167,7 +183,9 @@ function nextQuestion() {
     currentQuestion++;
     if (currentQuestion === totalQuestions) {
         alert("Quiz Over");
-        
+
+        quizFinished.css('display', 'flex');
+        displayQuestionField.css('display', 'none' );
     } else {
         showQuestion();
     }

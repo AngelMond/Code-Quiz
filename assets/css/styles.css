@@ -190,10 +190,13 @@ main{
 /* ONCE THE GAME IS OVER THIS WILL BE DISPLAY*/
 #quizDone{
     flex: 0 0 100%;
-    border: 1px solid black;
+    
     text-align: center;
+    display: flex;
+    justify-content: center;
+    
                         /* DISPLAY NONDE QUIZ DONE*/
-                                display:none ;
+                                display: none;
 }
 
 /* HEADING YOU FINISHED*/
@@ -203,8 +206,8 @@ main{
 }
 
 /*DIV STORE A SPAN WITH THE FINAL SCORE*/
-#finalScore{
-    font-size: 18px;
+#finalScoreContainer{
+    font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
     margin-top: 30px;
@@ -238,7 +241,6 @@ main{
 
 /* CONTAINER FOR MY SUBMIT BUTTON*/
 #submitScore{
-    border: 1px solid black;
     padding: 10px 0px;
 }
 
@@ -285,6 +287,8 @@ main{
    height: 40px;
    margin-top: 20px;
    padding: 5px 0px;
+   display: flex;
+   justify-content: left;
 }
 
 /*STYLES FOR MY BUTTON*/
@@ -295,6 +299,8 @@ main{
     background-color: var(--background-orange);
     border-radius: 5px;
     letter-spacing: .5px;
+    height: 25px;
+    line-height: 23px;
 }
 
 /* STYLES FOR MY BUTTON WHEN IS HOVER*/
