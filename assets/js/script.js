@@ -72,7 +72,7 @@ startGame.on('click', function(event){
 
 
 //Time variable started from 80 seconds
-var timeLeft = 5;
+var timeLeft = 80;
 //Function to count down the timer
 function countDown(){
 
