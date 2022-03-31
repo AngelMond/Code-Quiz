@@ -419,7 +419,14 @@ footer p{
     font-weight: 700;
 }
 
-footer span:hover{
+footer a{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: rgb(9, 9, 37);
+    font-weight: 700;
+}
+
+footer a:hover{
     color: white;
     text-decoration: underline;
     cursor: pointer;
