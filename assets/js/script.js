@@ -32,8 +32,6 @@ showHighscores.on('click', function(){
 
 
 
-
-
 ///////////////////////////////////////////////////////////////////
 
 //Function to start the game
@@ -53,12 +51,12 @@ startGame.on('click', function(event){
 
 
 
-
-var timeLeft = 120;
+//Time variable started from 80 seconds
+var timeLeft = 80;
 //Function to count down the timer
 function countDown(){
 
-    //Timer start to count 
+    //Timer start to countdown
 var timeInterval = setInterval(function(){
 
     timer.text(timeLeft);
@@ -71,42 +69,13 @@ var timeInterval = setInterval(function(){
     }, 1000) 
 }
 
-
-//botones tienen atributo disable
-//////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
 
 
 
 
-
-// var myQuestions = {
-
-//     question1:"What is JavaScript?",
-//     option1: "It is a videogame.",
-//     option1: "It is a text editor.",
-//     option1: "It is a microprocessor.",
-//     option1: "It is an interpreted programming language.",
-
-//     answer: option1,
-// },
-
-// {
-
-// }
-
-// //Create li elements for my answers
-// for(var i = 1; i < 5; i++){
-//     var createAnswer = $('<li>' + i + '.'+ ' holaaa</li>');
-//     answers.append(createAnswer);
-// }
-
-
-
-// var question = $('<h3>'+ arrayQuestions.question +'</h3>');
-//     questionContainer.append(question);
-
-//Selecciono mi <h3> donde va la pregunta y mis <li> donde iran mis respuestas
+//Select my <h3> where I show my questions and my <li> to display my answers
 var questionH3 = $('#displayQuestion')
 var answer1 = $('#option1');
 var answer2 = $('#option2');
@@ -114,7 +83,7 @@ var answer3 = $('#option3');
 var answer4 = $('#option4');
 
 
-//Mis preguntas, respuestas y respuesta correcta
+//All my questions and answers
 let arrayQuestions = [
     {
         questionTitle:'What is JavaScript?',
@@ -151,16 +120,17 @@ let arrayQuestions = [
 //Global variables
 let currentQuestion = 0;
 let score = 0;
+
+//Gives me just the index number inside my array
 let totalQuestions = arrayQuestions.length;//esto solo me da el numero de indices que tengo dentro de mi array
 
 
 
 
 //Function to display a question
-
 function showQuestion(){
 
-    //Question agarra mi todo mi objeto dentro de array
+    //Agarra mi todo mi objeto dentro de array
     let question = arrayQuestions[currentQuestion];
 
     //My questions
@@ -211,6 +181,7 @@ answer1.on('click', changeQuestion);
 answer2.on('click', changeQuestion);
 answer3.on('click', changeQuestion);
 answer4.on('click', changeQuestion);
+
 // Display the first question
 displayQuestion();
 
