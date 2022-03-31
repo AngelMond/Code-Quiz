@@ -131,7 +131,7 @@ let arrayQuestions = [
     {
         questionTitle: 'This array method organize the elements inside an array',
         options:['Sort', 'Push', 'Slice', 'Length'],
-        answer: 'Length',
+        answer: 'Sort',
     },
 
     {
