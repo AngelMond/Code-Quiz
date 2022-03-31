@@ -5,7 +5,8 @@ var quizFinished = $('#quizDone');
 var mainHighscoresContainer = $('#highscores-main-container');
 
 //This variable store the container for my highscores
-var highscores = $('#highscores-container');
+var highscoresContainer = $('#highscores-container');
+var highscoreButtonScoreContainer = $('#scoresButton');
 
 //Variable to store my score
 var playerScore = $('#score');
@@ -13,10 +14,10 @@ var finalScore = $('#finalScore');
 
 //These variables stores buttons
 var startGame = $('#startButton');
-var buttonScoreContainer = $('#scoresButton')
 var showHighscores = $('#showScores');
 var goBack = $('#goBack');
 var clearScores = $('#clearScores');
+var submitScore = $('#submitScore');
 
 //This variable store my timer
 var timer = $('#spanTimer');
@@ -34,18 +35,20 @@ var answers = $('#answers');
 
 //Function to display the highscores
 showHighscores.on('click', function(){
-    highscores.css('display', 'flex');
+    highscoresContainer.css('display', 'flex');
     instructionsContainer.css('display', 'none');
-    buttonScoreContainer.css('display', 'none');
+    highscoreButtonScoreContainer.css('display', 'none');
 
 });
 
 //Function to go back when the highscores screen is displayed
-goBack.on('click', function (){
+goBack.on('click', function(){
     instructionsContainer.css('display', 'flex');
-    highscores.css('display', 'none');
-    buttonScoreContainer.css('display', 'flex', );
+    highscoresContainer.css('display', 'none');
+    highscoreButtonScoreContainer.css('display', 'flex', );
 });
+
+
 
 
 
@@ -184,12 +187,20 @@ function nextQuestion() {
     if (currentQuestion === totalQuestions) {
         alert("Quiz Over");
 
-        quizFinished.css('display', 'flex');
         displayQuestionField.css('display', 'none' );
+        quizFinished.css('display', 'flex');
     } else {
         showQuestion();
     }
 }
+
+//Function to submit the score
+submitScore.on('click', function(){
+    quizFinished.css('display', 'none');
+    mainHighscoresContainer.css('display', 'flex');
+    highscoreButtonScoreContainer.css('display', 'none');
+    highscoresContainer.css('display', 'flex');
+});
 
 
 
