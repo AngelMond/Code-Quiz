@@ -72,7 +72,7 @@ startGame.on('click', function(event){
 
 
 //Time variable started from 80 seconds
-var timeLeft = 80;
+var timeLeft = 5;
 //Function to count down the timer
 function countDown(){
 
@@ -82,12 +82,17 @@ var timeInterval = setInterval(function(){
     timer.text(timeLeft);
     timeLeft--;
 
-    if(timeLeft === -1){
+    if(timeLeft === -2){
     clearInterval(timeInterval)
+        alert("Quiz Over");
+        displayQuestionField.css('display', 'none' );
+        quizFinished.css('display', 'flex');
     }
 
     }, 1000) 
 }
+
+
 
 ///////////////////////////////////////////////////////////////////
 
@@ -178,10 +183,13 @@ function checkAnswer(answer){
         timeLeft-=10;
         alert('wrong answer');
     }
+
 }
 
 
-// Function to change the question on clicking the next button
+
+
+// Function to change the question on clicking an answer
 function nextQuestion() {
     currentQuestion++;
     if (currentQuestion === totalQuestions) {
@@ -193,6 +201,8 @@ function nextQuestion() {
         showQuestion();
     }
 }
+
+
 
 //Function to submit the score
 submitScore.on('click', function(){
@@ -218,8 +228,7 @@ answer2.on('click', changeQuestion);
 answer3.on('click', changeQuestion);
 answer4.on('click', changeQuestion);
 
-// Display the first question
-displayQuestion();
+
 
 
 
