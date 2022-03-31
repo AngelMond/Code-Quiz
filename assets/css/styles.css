@@ -347,18 +347,17 @@ main{
     list-style: decimal;
 }
 
+/* STORES THE LIST OF PLAYER HIGHSCORES */
 #scores li{
     margin-left: 20px;
-}   
-
-/* STORES THE LIST OF ANSWERS */
-#listAnswer{
+    margin-top: 10px;
     background-color: #dfa86e;
-    text-align: left;
     border-radius: 5px;
     padding: 5px;
-    height: 25px;
-}
+    padding-left: 10px ;
+    text-align: left;
+    
+}   
 
 
 

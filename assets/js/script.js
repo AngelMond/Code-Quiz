@@ -8,6 +8,12 @@ var mainHighscoresContainer = $('#highscores-main-container');
 var highscoresContainer = $('#highscores-container');
 var highscoreButtonScoreContainer = $('#scoresButton');
 
+//ol container to create <li> to save player score
+var olContainer = $('#listContainer');
+
+//Input to enter initials
+var enterInitials = $('#submitScore');
+
 //Variable to store my score
 var playerScore = $('#score');
 var finalScore = $('#finalScore');
@@ -197,6 +203,7 @@ function nextQuestion() {
 
         displayQuestionField.css('display', 'none' );
         quizFinished.css('display', 'flex');
+
     } else {
         showQuestion();
     }
@@ -210,7 +217,17 @@ submitScore.on('click', function(){
     mainHighscoresContainer.css('display', 'flex');
     highscoreButtonScoreContainer.css('display', 'none');
     highscoresContainer.css('display', 'flex');
+
+
+
+    enterInitials.text();
+
+    var createLi = $('<li>holalaas</li>');
+    olContainer.append(createLi);
+    
 });
+
+
 
 
 
