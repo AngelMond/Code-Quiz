@@ -17,6 +17,11 @@
 
 * For select my html objects from JavaScript I used jQuery to keep my code a little bit more clean.
 
+# ISSUES
+
+* If the timer reaches 0 the quiz doesn't end.
+* When finishing a game and go back to the initial screen and start another game, it loads the last game in the last question and the timer shows negative numbers.
+
 * Initial view
 !["Initial View"](assets/screenshots/screenshot1.jpg)
 
