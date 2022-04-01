@@ -37,32 +37,9 @@ var answers = $('#answers');
 
 
 
-
-
-//Function to display the highscores
-showHighscores.on('click', function(event){
-    event.preventDefault();
-
-    highscoresContainer.css('display', 'flex');
-    instructionsContainer.css('display', 'none');
-    highscoreButtonScoreContainer.css('display', 'none');
-
-});
-
-//Function to go back when the highscores screen is displayed
-goBack.on('click', function(event){
-    event.preventDefault();
-
-    instructionsContainer.css('display', 'flex');
-    highscoresContainer.css('display', 'none');
-    highscoreButtonScoreContainer.css('display', 'flex', );
-});
-
-
-
-
-
 ///////////////////////////////////////////////////////////////////
+
+
 
 //Function to start the game
 startGame.on('click', function(event){
@@ -74,7 +51,7 @@ startGame.on('click', function(event){
     instructionsContainer.css('display', 'none');
     mainHighscoresContainer.css('display', 'none');
 
-    //The timer start to count down from 120 seconds
+    //The timer start to count down from 80 seconds
     countDown();
     showQuestion();
 });
@@ -83,6 +60,7 @@ startGame.on('click', function(event){
 
 //Time variable started from 80 seconds
 var timeLeft = 80;
+
 //Function to count down the timer
 function countDown(){
 
@@ -92,11 +70,9 @@ var timeInterval = setInterval(function(){
     timer.text(timeLeft);
     timeLeft--;
 
-    if(timeLeft === -2){
-    clearInterval(timeInterval)
-        alert("Quiz Over");
-        displayQuestionField.css('display', 'none' );
-        quizFinished.css('display', 'flex');
+    if(timeLeft === -1){
+    clearInterval(timeInterval);
+        
     }
 
     }, 1000) 
@@ -111,7 +87,7 @@ var timeInterval = setInterval(function(){
 
 
 //Select my <h3> where I show my questions and my <li> to display my answers
-var questionH3 = $('#displayQuestion')
+var questionH3 = $('#displayQuestion');
 var answer1 = $('#option1');
 var answer2 = $('#option2');
 var answer3 = $('#option3');
@@ -155,7 +131,6 @@ let arrayQuestions = [
 //Global variables
 let currentQuestion = 0;
 let score = 0;
-
 //Gives me just the index number inside my array
 let totalQuestions = arrayQuestions.length;//esto solo me da el numero de indices que tengo dentro de mi array
 
@@ -197,14 +172,12 @@ function checkAnswer(answer){
 }
 
 
-
-
 // Function to change the question on clicking an answer
 function nextQuestion() {
     currentQuestion++;
-    if (currentQuestion === totalQuestions) {
+    if (currentQuestion === totalQuestions || timeLeft === -2) {
+        
         alert("Quiz Over");
-
         displayQuestionField.css('display', 'none' );
         quizFinished.css('display', 'flex');
 
@@ -212,28 +185,6 @@ function nextQuestion() {
         showQuestion();
     }
 }
-
-
-
-//Function to submit the score
-submitScore.on('click', function(event){
-    event.preventDefault();
-    quizFinished.css('display', 'none');
-    mainHighscoresContainer.css('display', 'flex');
-    highscoreButtonScoreContainer.css('display', 'none');
-    highscoresContainer.css('display', 'flex');
-
-
-    // Capture the text initials entered by the player
-    var initials = enterInitials.val();
-
-    //Create a <li> element with the initials of the player
-    initialsContainer.append('<li>'+ initials + ' - '+ score+'</li>');
-    
-});
-
-
-
 
 
 //function to change the question on click and check the answer
@@ -251,6 +202,53 @@ answer3.on('click', changeQuestion);
 answer4.on('click', changeQuestion);
 
 
+
+//Function to submit the score
+submitScore.on('click', function(event){
+    event.preventDefault();
+    quizFinished.css('display', 'none');
+    mainHighscoresContainer.css('display', 'flex');
+    highscoreButtonScoreContainer.css('display', 'none');
+    highscoresContainer.css('display', 'flex');
+
+
+    // Capture the text initials entered by the player
+    var initials = enterInitials.val();
+    
+    //Create a <li> element with the initials of the player
+    initialsContainer.append('<li>'+ initials + ' - '+ score+'</li>');
+    
+
+});
+
+/************ FUNCTIONS TO NAVIGATE THROUGH THE PAGE **********/
+
+//Function to display the highscores
+showHighscores.on('click', function(event){
+    event.preventDefault();
+
+    highscoresContainer.css('display', 'flex');
+    instructionsContainer.css('display', 'none');
+    highscoreButtonScoreContainer.css('display', 'none');
+
+});
+
+//Function to go back when the highscores screen is displayed
+goBack.on('click', function(event){
+    event.preventDefault();
+
+    instructionsContainer.css('display', 'flex');
+    highscoresContainer.css('display', 'none');
+    highscoreButtonScoreContainer.css('display', 'flex', );
+});
+
+
+//Function to clear score
+clearScores.on('click', function(event){
+    event.preventDefault();
+    initialsContainer.remove();
+    
+});
 
 
 
