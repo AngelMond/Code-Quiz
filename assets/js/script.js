@@ -59,18 +59,20 @@ startGame.on('click', function(event){
 
 
 //Time variable started from 80 seconds
-var timeLeft = 80;
+var timeLeft = [];
 
 //Function to count down the timer
 function countDown(){
 
+    //set 80 second when count down begins
+    timeLeft.push(80);
     //Timer start to countdown
 var timeInterval = setInterval(function(){
 
     timer.text(timeLeft);
     timeLeft--;
 
-    if(timeLeft === -1){
+    if(timeLeft < 0){
     clearInterval(timeInterval);
         
     }
@@ -175,7 +177,7 @@ function checkAnswer(answer){
 // Function to change the question on clicking an answer
 function nextQuestion() {
     currentQuestion++;
-    if (currentQuestion === totalQuestions || timeLeft === -2) {
+    if (currentQuestion === totalQuestions || timeLeft < 0) {
         
         alert("Quiz Over");
         displayQuestionField.css('display', 'none' );
